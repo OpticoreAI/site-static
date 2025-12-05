@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>
+      Agente de IA — Automatize seu Atendimento | Solução Empresarial
+    </title>
+
+    <!-- Facebook domain verification (solicitado) -->
+    <meta
+      name="facebook-domain-verification"
+      content="jmtvppthjq409putcffp6xgh2uigxl"
+    />
+
+    <!-- SEO basic -->
+    <meta
+      name="description"
+      content="Agente de IA para automatizar processos internos de atendimento — reduza custos, aumente eficiência e melhore a experiência do cliente. Solicite contato comercial."
+    />
+    <link rel="icon" href="data:," />
+
+    <!-- Structured data (Organization) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Agente de IA — Solução Empresarial",
+        "url": "",
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+55 (51) 99543-2515",
+            "contactType": "sales",
+            "areaServed": "BR"
+          }
+        ]
+      }
+    </script>
+
+    <style>
+      /* Reset + base */
+      :root {
+        --bg: #0f1724;
+        --card: #0b1220;
+        --accent: #4f46e5;
+        --accent-2: #06b6d4;
+        --muted: #94a3b8;
+        --text: #e6eef8;
+        --glass: rgba(255, 255, 255, 0.03);
+        --success: #10b981;
+        --danger: #ef4444;
+        --maxw: 1100px;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+          Roboto, "Helvetica Neue", Arial;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        background: linear-gradient(180deg, #071029 0%, #071428 100%);
+        color: var(--text);
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      .container {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 28px;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0;
+      }
+      .logo {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .logo .mark {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: white;
+      }
+      nav {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+      }
+      nav a {
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: 28px;
+        align-items: center;
+        padding: 40px 0;
+      }
+      .hero h1 {
+        font-size: 32px;
+        margin: 0 0 12px;
+        line-height: 1.05;
+      }
+      .hero p.lead {
+        color: var(--muted);
+        margin: 0 0 20px;
+      }
+      .cta-group {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .btn {
+        background: var(--accent);
+        border: none;
+        color: white;
+        padding: 12px 18px;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 6px 18px rgba(79, 70, 229, 0.12);
+      }
+      .btn.secondary {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        color: var(--text);
+      }
+      .card {
+        background: var(--card);
+        padding: 20px;
+        border-radius: 14px;
+        box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6);
+      }
+      /* features */
+      .features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 18px;
+      }
+      .feature {
+        padding: 18px;
+        border-radius: 12px;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.02),
+          transparent
+        );
+        border: 1px solid rgba(255, 255, 255, 0.02);
+      }
+      .feature h4 {
+        margin: 0 0 8px;
+      }
+      .how {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-top: 30px;
+      }
+      /* contact form */
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      label {
+        font-size: 13px;
+        color: var(--muted);
+      }
+      input,
+      textarea,
+      select {
+        background: var(--glass);
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        color: var(--text);
+        padding: 10px;
+        border-radius: 8px;
+        outline: none;
+        font-size: 14px;
+      }
+      input:focus,
+      textarea:focus {
+        box-shadow: 0 6px 18px rgba(79, 70, 229, 0.12);
+        border-color: rgba(79, 70, 229, 0.35);
+      }
+      textarea {
+        min-height: 110px;
+        resize: vertical;
+      }
+      footer {
+        padding: 28px 0;
+        color: var(--muted);
+        font-size: 13px;
+        border-top: 1px solid rgba(255, 255, 255, 0.02);
+        margin-top: 40px;
+      }
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+      .small {
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .badge {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.03);
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 13px;
+        color: var(--accent-2);
+      }
+      .consent {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+      }
+      .consent input {
+        margin-top: 3px;
+      }
+      /* responsive */
+      @media (max-width: 980px) {
+        .hero {
+          grid-template-columns: 1fr;
+          padding-bottom: 10px;
+        }
+        .how {
+          grid-template-columns: 1fr;
+        }
+        .features {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .grid-2 {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 560px) {
+        .features {
+          grid-template-columns: 1fr;
+        }
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 8px;
+        }
+        .logo .mark {
+          width: 36px;
+          height: 36px;
+        }
+        .hero h1 {
+          font-size: 26px;
+        }
+      }
+      /* cookie banner */
+      .cookie-banner {
+        position: fixed;
+        right: 18px;
+        bottom: 18px;
+        background: linear-gradient(180deg, #071428, #0b1a2b);
+        padding: 14px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6);
+        z-index: 9999;
+        max-width: 340px;
+      }
+      .cookie-banner p {
+        margin: 0 0 10px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .cookie-actions {
+        display: flex;
+        gap: 8px;
+        justify-content: flex-end;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">
+          <div class="mark">IA</div>
+          <div>
+            <div style="font-weight: 700">Agente de IA</div>
+            <div style="font-size: 12px; color: var(--muted)">
+              Automatize processos internos de atendimento
+            </div>
+          </div>
+        </div>
+
+        <nav aria-label="principal">
+          <a href="#beneficios">Benefícios</a>
+          <a href="#como">Como funciona</a>
+          <a href="#contato" class="badge">Solicitar contato</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div>
+            <h1>Automatize seu atendimento interno com um Agente de IA</h1>
+            <p class="lead">
+              Reduza tempo de resposta, centralize processos e libere sua equipe
+              para tarefas estratégicas. Integração com sistemas internos e
+              adaptação ao fluxo de trabalho da sua empresa.
+            </p>
+
+            <div class="cta-group">
+              <button
+                class="btn"
+                onclick="document.getElementById('contatoForm').scrollIntoView({behavior:'smooth'})"
+              >
+                Solicitar contato comercial
+              </button>
+              <a class="btn secondary" href="#como">Ver como funciona</a>
+            </div>
+
+            <div class="features" aria-hidden="false" style="margin-top: 22px">
+              <div class="feature">
+                <h4>Integrações</h4>
+                <p class="small">
+                  Conecta CRMs, sistemas de ticket, ERP e bases internas via
+                  API.
+                </p>
+              </div>
+              <div class="feature">
+                <h4>Automação Personalizada</h4>
+                <p class="small">
+                  Fluxos de atendimento configuráveis para cada setor da sua
+                  empresa.
+                </p>
+              </div>
+              <div class="feature">
+                <h4>Segurança & Compliance</h4>
+                <p class="small">
+                  Processamento seguro, logs auditáveis e controle de acesso por
+                  usuário.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <aside class="card" aria-labelledby="contatoTitle" id="contato">
+            <h3 id="contatoTitle" style="margin-top: 0">
+              Solicitar contato comercial
+            </h3>
+            <p class="small" style="margin-top: 0">
+              Preencha os dados abaixo e nossa equipe entrará em contato para
+              uma demonstração personalizada.
+            </p>
+
+            <form id="contatoForm" onsubmit="return handleContact(event)">
+              <div
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px"
+              >
+                <div>
+                  <label for="nome">Nome *</label>
+                  <input id="nome" name="nome" required />
+                </div>
+                <div>
+                  <label for="empresa">Empresa *</label>
+                  <input id="empresa" name="empresa" required />
+                </div>
+              </div>
+
+              <div
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px"
+              >
+                <div>
+                  <label for="email">E-mail *</label>
+                  <input id="email" name="email" type="email" required />
+                </div>
+                <div>
+                  <label for="telefone">Telefone</label>
+                  <input id="telefone" name="telefone" />
+                </div>
+              </div>
+
+              <div>
+                <label for="mensagem">Mensagem</label>
+                <textarea
+                  id="mensagem"
+                  name="mensagem"
+                  placeholder="Breve descrição do projeto ou principais dúvidas"
+                ></textarea>
+              </div>
+
+              <label class="consent">
+                <input type="checkbox" id="consent" required />
+                <span class="small"
+                  >Li e concordo com a
+                  <a href="privacy.html" target="_blank" rel="noopener"
+                    >Política de Privacidade</a
+                  >
+                  e os
+                  <a href="terms.html" target="_blank" rel="noopener"
+                    >Termos de Serviço</a
+                  >.</span
+                >
+              </label>
+
+              <div style="display: flex; gap: 8px; margin-top: 6px">
+                <button type="submit" class="btn">Solicitar contato</button>
+                <button
+                  type="button"
+                  class="btn secondary"
+                  onclick="fillDemo()"
+                >
+                  Preencher demo
+                </button>
+              </div>
+
+              <div
+                id="formMsg"
+                style="font-size: 13px; margin-top: 8px; color: var(--muted)"
+              ></div>
+            </form>
+          </aside>
+        </section>
+
+        <section id="beneficios" style="margin-top: 22px">
+          <div class="card">
+            <h3>Por que usar um Agente de IA para atendimento interno?</h3>
+            <div class="how">
+              <div>
+                <h4>Redução de custo operacional</h4>
+                <p class="small">
+                  Automatize tarefas repetitivas e reduza o tempo que a equipe
+                  gasta com atividades manuais.
+                </p>
+
+                <h4 style="margin-top: 12px">
+                  Melhora na velocidade de resposta
+                </h4>
+                <p class="small">
+                  Respostas consistentes e imediatas para questões internas e
+                  solicitações de suporte.
+                </p>
+
+                <h4 style="margin-top: 12px">Conformidade e rastreabilidade</h4>
+                <p class="small">
+                  Logs e histórico das interações para auditoria e melhorias
+                  contínuas.
+                </p>
+              </div>
+
+              <div>
+                <h4>Como o Agente de IA atua</h4>
+                <ol
+                  style="
+                    padding-left: 18px;
+                    margin-top: 6px;
+                    color: var(--muted);
+                  "
+                >
+                  <li>
+                    Integração com seus sistemas (CRM, ERP, chat interno).
+                  </li>
+                  <li>Configuração de fluxos e regras de atendimento.</li>
+                  <li>Treinamento com dados internos (opcional).</li>
+                  <li>Monitoramento e ajustes contínuos.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="como" style="margin-top: 24px">
+          <div class="card">
+            <h3>Fluxo de implantação (visão geral)</h3>
+            <div
+              style="
+                display: flex;
+                gap: 12px;
+                flex-wrap: wrap;
+                margin-top: 12px;
+              "
+            >
+              <div style="flex: 1; min-width: 200px">
+                <h4>1. Diagnóstico</h4>
+                <p class="small">
+                  Mapeamos processos, pontos de melhoria e integrações
+                  necessárias.
+                </p>
+              </div>
+              <div style="flex: 1; min-width: 200px">
+                <h4>2. Configuração</h4>
+                <p class="small">
+                  Criamos fluxos, respostas e permissões de acesso.
+                </p>
+              </div>
+              <div style="flex: 1; min-width: 200px">
+                <h4>3. Testes & Treinamento</h4>
+                <p class="small">
+                  Validação com usuários e ajuste fino das interações.
+                </p>
+              </div>
+              <div style="flex: 1; min-width: 200px">
+                <h4>4. Operação</h4>
+                <p class="small">Monitoramento, métricas e suporte contínuo.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section style="margin-top: 24px">
+          <div class="card grid-2">
+            <div>
+              <h3>Detalhes técnicos essenciais</h3>
+              <ul style="color: var(--muted)">
+                <li>APIs REST para integração</li>
+                <li>Autenticação via tokens (OAuth2 / API keys)</li>
+                <li>Logs e relatórios exportáveis</li>
+                <li>Opção de hospedagem dedicada ou SaaS</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Privacidade & Segurança</h3>
+              <p class="small">
+                Processamos dados conforme nossa
+                <a href="privacy.html">Política de Privacidade</a>. Oferecemos
+                controles de retenção, anonimização e auditoria de acesso.
+              </p>
+              <p style="margin-top: 12px">
+                <strong>Contato comercial:</strong><br />Andre — (51) 99543-2515
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+          "
+        >
+          <div>
+            <strong>Agente de IA — Automatize seu atendimento</strong>
+            <div class="small">
+              © <span id="year"></span> — Todos os direitos reservados
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 12px; align-items: center">
+            <a href="privacy.html" target="_blank">Política de Privacidade</a>
+            <a href="terms.html" target="_blank">Termos de Serviço</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Cookie banner -->
+    <div class="cookie-banner" id="cookieBanner" style="display: none">
+      <p>
+        Usamos cookies e tecnologias semelhantes para analisar uso, garantir
+        funcionamento e oferecer integrações. Ao usar, você concorda com nossa
+        <a href="privacy.html" target="_blank">Política de Privacidade</a>.
+      </p>
+      <div class="cookie-actions">
+        <button class="btn secondary" onclick="declineCookies()">
+          Recusar
+        </button>
+        <button class="btn" onclick="acceptCookies()">Aceitar</button>
+      </div>
+    </div>
+
+    <script>
+      // basic behaviours
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Cookie banner logic (very simple)
+      function hasCookieConsent() {
+        return localStorage.getItem("cookie_consent") === "yes";
+      }
+      function acceptCookies() {
+        localStorage.setItem("cookie_consent", "yes");
+        document.getElementById("cookieBanner").style.display = "none";
+      }
+      function declineCookies() {
+        localStorage.setItem("cookie_consent", "no");
+        document.getElementById("cookieBanner").style.display = "none";
+      }
+
+      if (!localStorage.getItem("cookie_consent")) {
+        document.getElementById("cookieBanner").style.display = "block";
+      }
+
+      // Contact form: opens mail client (mailto) with encoded body. No backend required.
+      function handleContact(e) {
+        e.preventDefault();
+        const nome = document.getElementById("nome").value.trim();
+        const empresa = document.getElementById("empresa").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const telefone = document.getElementById("telefone").value.trim();
+        const mensagem = document.getElementById("mensagem").value.trim();
+
+        if (!nome || !empresa || !email) {
+          showMsg("Por favor, preencha os campos obrigatórios.", true);
+          return false;
+        }
+
+        const subject = encodeURIComponent(
+          "Solicitação de contato comercial — Agente de IA"
+        );
+        const bodyLines = [
+          `Nome: ${nome}`,
+          `Empresa: ${empresa}`,
+          `E-mail: ${email}`,
+          `Telefone: ${telefone}`,
+          "",
+          "Mensagem:",
+          mensagem,
+        ];
+        const body = encodeURIComponent(bodyLines.join("\n"));
+
+        // Replace the destination email below with your commercial contact address.
+        // Example: const dest = 'comercial@suaempresa.com'
+        const dest = "comercial@suaempresa.com";
+        const mailto = `mailto:${dest}?subject=${subject}&body=${body}`;
+
+        // Try to open mail client:
+        window.location.href = mailto;
+
+        // show success hint
+        showMsg(
+          "Abrindo seu cliente de e-mail para concluir o envio. Se preferir, pode contatar: comercial@suaempresa.com",
+          false
+        );
+        return false;
+      }
+
+      function showMsg(txt, isError) {
+        const el = document.getElementById("formMsg");
+        el.textContent = txt;
+        el.style.color = isError ? "var(--danger)" : "var(--muted)";
+      }
+
+      // demo filler
+      function fillDemo() {
+        document.getElementById("nome").value = "João Silva";
+        document.getElementById("empresa").value = "Empresa Exemplo";
+        document.getElementById("email").value = "joao@exemplo.com";
+        document.getElementById("telefone").value = "+55 51 9 9999-9999";
+        document.getElementById("mensagem").value =
+          "Gostaria de uma demonstração focada em integração com CRM e redução de tempo de atendimento interno.";
+      }
+    </script>
+  </body>
+</html>
