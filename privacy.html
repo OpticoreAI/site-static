@@ -19,8 +19,9 @@
       * { box-sizing:border-box; } html { scroll-behavior:smooth; }
       body { margin:0; background:radial-gradient(circle at 80% 0%,rgba(119,46,175,.24),transparent 28%),var(--ink); color:var(--white); font-family:Manrope,Arial,sans-serif; line-height:1.7; }
       .site-header,.container,footer { width:min(960px,calc(100% - 48px)); margin:auto; }
-      .site-header { height:92px; display:flex; align-items:center; justify-content:space-between; }
-      .brand { display:flex; align-items:center; width:70px; height:76px; overflow:visible; }\n      .brand-logo { display:block; width:170px; height:auto; max-height:none; transform:translateY(42px); }
+      .site-header { height:92px; display:flex; align-items:center; justify-content:space-between; position:relative; }
+      .brand { display:flex; align-items:center; width:102px; height:58px; overflow:visible; position:absolute; top:0; right:146px; opacity:.16; pointer-events:none; }
+      .brand-logo { display:block; width:102px; height:auto; max-height:none; transform:translateY(4px); }
       .back-link { padding:11px 17px; border:1px solid var(--pink); border-radius:9px; color:var(--white); font-size:13px; font-weight:700; text-decoration:none; transition:.2s; }
       .back-link:hover { background:rgba(243,47,146,.14); transform:translateY(-2px); }
       .container { margin-top:38px; margin-bottom:68px; padding:clamp(28px,5vw,58px); background:linear-gradient(145deg,rgba(28,27,65,.96),rgba(13,15,40,.96)); border:1px solid var(--line); border-radius:24px; box-shadow:0 30px 70px rgba(0,0,0,.25); }
