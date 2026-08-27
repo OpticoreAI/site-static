@@ -26,7 +26,7 @@ A proposta é simples: começar pelo problema certo, validar o impacto e evoluir
 
 - **Atendimento com IA** para triagem, orientação inicial e coleta de informações.
 - **Qualificação de leads** com contexto e priorização antes da atuação comercial.
-- **Agendamentos e follow-up** com regras e próximos passos definidos.
+- **Próximos passos comerciais** com diagnóstico do fluxo, responsabilidades e regras definidas.
 - **Automações de processos internos** para reduzir tarefas manuais e retrabalho.
 - **Integrações personalizadas** de acordo com a necessidade e o ambiente do cliente.
 
@@ -75,6 +75,10 @@ A Opticore AI mantém informações institucionais, termos de uso e política de
 - [Site oficial](https://www.opticoreai.com.br/)
 - [Política de Privacidade](https://www.opticoreai.com.br/privacy.html)
 - [Termos de Serviço](https://www.opticoreai.com.br/terms.html)
+- [Diagnóstico operacional com IA](https://www.opticoreai.com.br/diagnostico-operacional-com-ia.html)
+- [Atendimento no WhatsApp com IA](https://www.opticoreai.com.br/atendimento-whatsapp-ia.html)
+- [Qualificação de leads com IA](https://www.opticoreai.com.br/qualificacao-de-leads.html)
+- [Automação de processos empresariais](https://www.opticoreai.com.br/automacao-processos-empresariais.html)
 
 ## Contato
 
