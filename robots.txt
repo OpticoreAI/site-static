@@ -3,3 +3,8 @@ Allow: /
 
 User-agent: OAI-SearchBot
 Allow: /
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.opticoreai.com.br/sitemap.xml
