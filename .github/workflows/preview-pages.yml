@@ -1,0 +1,38 @@
+name: Publicar prévia do site
+
+on:
+  push:
+    branches:
+      - preview/site-review-20260827
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-preview
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obter arquivos da prévia
+        uses: actions/checkout@v4
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Enviar site estático
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Publicar prévia
+        id: deployment
+        uses: actions/deploy-pages@v4
