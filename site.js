@@ -100,22 +100,57 @@
         var status = form.querySelector('[data-lead-form-status]');
         var endpoint = form.dataset.endpoint;
         if (!endpoint) {
-          status.textContent = 'Prévia segura: o envio ao n8n será ativado somente após a validação do webhook e da privacidade.';
+          status.textContent = 'O formulário está temporariamente indisponível. Fale conosco pelo botão do WhatsApp nesta página.';
           status.classList.add('is-preview');
           return;
         }
+
         var payload = Object.fromEntries(new FormData(form).entries());
+        if (payload.contact_preference === 'email' && !payload.email.trim()) {
+          status.textContent = 'Informe seu e-mail para receber o retorno por esse canal.'; return;
+        }
+        if (!/^\d{10,15}$/.test(payload.phone.replace(/\D/g, ''))) {
+          status.textContent = 'Confira o WhatsApp informado, incluindo o DDD.'; return;
+        }
+        if (!form.dataset.requestId) form.dataset.requestId = crypto.randomUUID();
+        payload.request_id = form.dataset.requestId;
         payload.page_path = window.location.pathname;
-        payload.landing_url = window.location.href;
-        payload.utm_source = new URLSearchParams(window.location.search).get('utm_source') || '';
-        payload.utm_medium = new URLSearchParams(window.location.search).get('utm_medium') || '';
-        payload.utm_campaign = new URLSearchParams(window.location.search).get('utm_campaign') || '';
-        payload.cta_id = 'solution_form';
-        fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
-          .then(function (response) { if (!response.ok) throw new Error('lead_submit_failed'); return response.json().catch(function () { return {}; }); })
-          .then(function () { status.textContent = 'Recebemos sua solicitação. Em breve, retornaremos pelo canal escolhido.'; track('lead_form_submitted', { page_path: window.location.pathname }); form.reset(); })
-          .catch(function () { status.textContent = 'Não foi possível enviar agora. Você pode falar conosco pelo WhatsApp.'; });
+        // Do not send full URLs, which may contain unrelated private query parameters.
+        ['utm_source','utm_medium','utm_campaign'].forEach(function (key) {
+          payload[key] = (new URLSearchParams(window.location.search).get(key) || '').slice(0, 120);
+        });
+        var button = form.querySelector('[type="submit"]');
+        if (button.disabled) return;
+        button.disabled = true;
+        status.textContent = 'Enviando sua solicitação…';
+        var controller = new AbortController();
+        var timer = setTimeout(function () { controller.abort(); }, 20000);
+        fetch(endpoint, { method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+          body: new URLSearchParams(payload).toString(), signal: controller.signal })
+          .then(function (response) {
+            return response.json().then(function (body) {
+              if (!response.ok || body.ok !== true || body.request_id !== payload.request_id) {
+                throw new Error(body.error || 'lead_submit_failed');
+              }
+              return body;
+            });
+          })
+          .then(function () {
+            status.textContent = 'Recebemos sua solicitação. Em breve, retornaremos pelo canal escolhido.';
+            status.classList.remove('is-preview');
+            track('lead_form_submitted', { page_path: window.location.pathname });
+            form.reset(); delete form.dataset.requestId;
+          })
+          .catch(function (error) {
+            status.textContent = error.message === 'rate_limited'
+              ? 'Você enviou várias solicitações. Aguarde alguns minutos ou fale conosco pelo WhatsApp.'
+              : 'Não foi possível confirmar o envio. Tente novamente ou fale conosco pelo WhatsApp.';
+          })
+          .finally(function () { clearTimeout(timer); button.disabled = false; });
+
       });
     });
   });
 }());
+

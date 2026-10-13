@@ -25,9 +25,10 @@
         <p class="lead-dialog-eyebrow">Indicadores operacionais</p>
         <h2 id="lead-form-title">Conte um pouco sobre o seu processo.</h2>
         <p class="lead-dialog-intro">Usaremos estas informações somente para entender a sua solicitação e retornar pelo canal escolhido.</p>
-        <form class="lead-form" data-lead-form data-solution-context="Indicadores operacionais" data-form-version="lead-v1" novalidate>
+        <form class="lead-form" data-lead-form data-endpoint="https://automacao.opticoreai.com.br/webhook/opticore-site-leads-v1" data-solution-context="Indicadores operacionais" data-form-version="lead-v1" novalidate>
           <input type="hidden" name="solution_context" value="Indicadores operacionais">
           <input type="hidden" name="form_version" value="lead-v1">
+          <label style="position:absolute;left:-10000px" aria-hidden="true">Website<input name="website" type="text" tabindex="-1" autocomplete="off"></label>
           <label>Seu nome<input name="name" type="text" autocomplete="name" required></label>
           <label>Empresa<input name="company" type="text" autocomplete="organization" required></label>
           <label>WhatsApp<input name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(00) 00000-0000" required></label>
@@ -44,3 +45,4 @@
   <footer class="landing-footer page-shell"><span>Opticore AI — Minas Gerais — Brasil<br><a href="mailto:contato@opticoreai.com.br">contato@opticoreai.com.br</a></span><span><a href="privacy.html">Privacidade</a> · <a href="terms.html">Termos</a> · <button class="cookie-settings" type="button" data-cookie-settings>Cookies</button></span></footer>
 </body>
 </html>
+
