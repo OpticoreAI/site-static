@@ -34,7 +34,7 @@
     </style>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Opticore AI","legalName":"63.759.540 ANDRE LORENTE RODRIGUES","taxID":"63.759.540/0001-73","url":"https://www.opticoreai.com.br/","email":"contato@opticoreai.com.br","address":{"@type":"PostalAddress","addressRegion":"Minas Gerais","addressCountry":"BR"},"description":"Agentes de IA e automações para empresas."}</script>
     <link rel="stylesheet" href="site.css">
-    <script src="site.js" defer></script>
+    <script src="site.js?v=20261013-leads-2" defer></script>
   
     <style>
       @media (max-width: 650px) {
@@ -54,12 +54,26 @@
         .capability:active { transform: scale(.98); }
       }
     </style>
+    <style>
+      .header-actions{display:flex;align-items:center;justify-content:flex-end;gap:10px;flex-shrink:0}
+      .header-actions .header-cta{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 15px;white-space:nowrap;font:800 13px/1.2 Manrope,Arial,sans-serif;color:var(--white)}
+      .header-actions .portal-entry{border-color:rgba(185,178,255,.46)}
+      .header-actions .hire-entry{background:#9c216e;cursor:pointer}
+      .header-actions .hire-entry:hover{background:#b3207c}
+      .header-actions .header-cta:focus-visible{outline:2px solid var(--white);outline-offset:3px}
+      @media (max-width:1100px){.site-header .nav-links{gap:16px;font-size:13px}}
+      @media (max-width:820px){.site-header .nav-links{display:none}}
+      @media (max-width:400px){.header-actions{gap:6px}.header-actions .header-cta{padding-inline:9px;font-size:12px}}
+    </style>
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="#inicio" aria-label="Opticore AI - início"><img class="brand-logo" src="logo-branca-sem-fundo.png" alt="Opticore AI"></a>
       <nav class="nav-links" aria-label="Navegação principal"><a href="#solucoes">Soluções</a><a href="#metodo">Como funciona</a><a href="#porque">Por que começar</a><a href="#faq">Dúvidas</a></nav>
-      <a class="header-cta" data-track="whatsapp" data-cta="home_cabecalho" href="https://wa.me/551151927579?text=Olá%2C%20vim%20pelo%20site%20da%20Opticore%20e%20quero%20avaliar%20um%20processo%20da%20minha%20empresa." target="_blank" rel="noreferrer">Falar sobre meu processo</a>
+      <div class="header-actions">
+        <a class="header-cta portal-entry" href="https://opticoreai.com.br/portal/cliente/login/">Entrar no portal</a>
+        <button class="header-cta hire-entry" type="button" data-open-lead-form aria-haspopup="dialog">Quero contratar</button>
+      </div>
     </header>
     <main>
       <section class="hero section" id="inicio">
@@ -73,6 +87,28 @@
       <section class="about section" id="sobre"><div class="about-card"><p class="eyebrow">Sobre a Opticore AI</p><h2>Operações inteligentes, conectadas à realidade da empresa.</h2><p>Somos uma empresa brasileira de tecnologia especializada em desenvolver e implantar soluções com inteligência artificial, automações e integrações para atendimento, qualificação, vendas e processos internos. A tecnologia entra como parte da operação, com escopo claro, regras definidas e participação humana quando necessária.</p></div></section>
       <section class="faq section" id="faq"><div class="faq-header"><p class="eyebrow">Dúvidas comuns</p><h2>Clareza antes de qualquer implantação.</h2></div><div class="faq-grid"><article class="faq-item"><h3>A IA substitui minha equipe?</h3><p>Não. O objetivo é organizar rotinas e apoiar o time, com regras e pontos de decisão definidos junto com você.</p></article><article class="faq-item"><h3>Funciona no WhatsApp?</h3><p>Sim. O canal pode fazer parte da solução quando ele for adequado ao processo e às integrações necessárias.</p></article><article class="faq-item"><h3>Como começa a implantação?</h3><p>Começamos pelo diagnóstico e por uma implantação prioritária, em vez de prometer uma transformação ampla sem contexto.</p></article><article class="faq-item"><h3>O que recebo no diagnóstico?</h3><p>Um entendimento do cenário, das oportunidades mais viáveis e de um possível próximo passo com escopo claro.</p></article></div></section>
       <section class="contact section" id="contato"><div class="contact-mark" aria-hidden="true"></div><div><p class="eyebrow">Comece pelo diagnóstico</p><h2>Vamos identificar um bom ponto de partida para a sua operação.</h2><p>Uma conversa direta para entender o cenário, avaliar uma aplicação viável e definir os próximos passos.</p></div><a class="primary-cta" data-track="whatsapp" data-cta="home_contato" href="https://wa.me/551151927579?text=Olá%2C%20quero%20entender%20como%20a%20Opticore%20pode%20ajudar%20a%20melhorar%20um%20processo%20da%20minha%20empresa." target="_blank" rel="noreferrer">Quero avaliar minha operação <span>→</span></a></section>
+    <dialog class="lead-dialog" data-lead-dialog aria-labelledby="lead-form-title">
+      <div class="lead-dialog-inner">
+        <button class="lead-dialog-close" type="button" data-close-lead-form aria-label="Fechar formulário">×</button>
+        <p class="lead-dialog-eyebrow">WhatsApp Business</p>
+        <h2 id="lead-form-title">Solicite a contratação</h2>
+        <p class="lead-dialog-intro">Informe os dados da sua empresa. A Opticore vai analisar a solicitação e entrar em contato para combinar a contratação.</p>
+        <form class="lead-form" data-lead-form data-endpoint="https://automacao.opticoreai.com.br/webhook/opticore-site-leads-v1" data-solution-context="Atendimento no WhatsApp" data-form-version="lead-v1" novalidate>
+          <input type="hidden" name="solution_context" value="Atendimento no WhatsApp">
+          <input type="hidden" name="form_version" value="lead-v1">
+          <label style="position:absolute;left:-10000px" aria-hidden="true">Website<input name="website" type="text" tabindex="-1" autocomplete="off"></label>
+          <label>Nome do responsável<input name="name" type="text" autocomplete="name" required></label>
+          <label>Empresa<input name="company" type="text" autocomplete="organization" required></label>
+          <label>WhatsApp<input name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(00) 00000-0000" required></label>
+          <label>E-mail do responsável<input name="email" type="email" autocomplete="email" placeholder="voce@empresa.com.br" required></label>
+          <label>Segmento<select name="segment" required><option value="">Selecione</option><option>Comércio</option><option>Serviços</option><option>Indústria</option><option>Associação ou entidade</option><option>Outro</option></select></label>
+          <label class="full">Qual processo ou dificuldade você quer melhorar?<textarea name="challenge" maxlength="900" required placeholder="Ex.: os contatos demoram a receber resposta e o time perde o contexto."></textarea></label>
+          <label class="full">Canal preferido para retorno<select name="contact_preference" required><option value="">Selecione</option><option value="whatsapp">WhatsApp</option><option value="email">E-mail</option></select></label>
+          <label class="lead-consent"><input name="consent" type="checkbox" required><span>Autorizo a Opticore AI a usar estes dados para analisar minha solicitação e entrar em contato. Consulte a <a href="privacy.html">Política de Privacidade</a>.</span></label>
+          <div class="lead-form-actions"><button class="lead-submit" type="submit">Enviar solicitação</button><p class="lead-form-status" data-lead-form-status aria-live="polite"></p></div>
+        </form>
+      </div>
+    </dialog>
     </main>
     <footer><span>Opticore AI — 63.759.540 ANDRE LORENTE RODRIGUES — CNPJ 63.759.540/0001-73 — Minas Gerais — Brasil<br><a href="mailto:contato@opticoreai.com.br">contato@opticoreai.com.br</a></span><span><a href="privacy.html">Política de Privacidade</a> &nbsp;·&nbsp; <a href="terms.html">Termos de Serviço</a> &nbsp;·&nbsp; <button class="cookie-settings" type="button" data-cookie-settings>Preferências de cookies</button></span></footer>
     <a class="whatsapp-float" data-track="whatsapp" data-cta="flutuante" href="https://wa.me/551151927579?text=Olá%2C%20tenho%20um%20processo%20manual%20e%20quero%20entender%20por%20onde%20começar." target="_blank" rel="noreferrer" aria-label="Falar com a Opticore AI pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true" fill="none"><path d="M16 3.5a12.4 12.4 0 0 0-10.6 18.8L4 28l5.9-1.5A12.5 12.5 0 1 0 16 3.5Z" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><path d="M12.2 10.2c.2-.5.5-.5.8-.5h.8c.2 0 .5.1.6.5l1.2 2.8c.1.3.1.5-.1.7l-.8 1c.8 1.6 2.1 2.9 3.7 3.7l1-.8c.2-.2.5-.2.7-.1l2.8 1.2c.4.2.5.4.5.6v.8c0 .3 0 .6-.5.8-.7.3-1.7.5-2.8.1-3.5-1.2-6.9-4.6-8.1-8.1-.4-1.1-.2-2.1.1-2.8Z" fill="currentColor"/></svg></a>
